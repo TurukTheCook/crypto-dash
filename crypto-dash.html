@@ -15,18 +15,6 @@
        :host {
         display: block;
         font-family: 'Roboto';
-        --paper-cryptocurrency-primary-text-color: #06c9d0;
-      }
-
-      h2 {
-        color: #06c9d0;
-        @apply --layout-horizontal;
-        @apply --layout-center-center;
-      }
-
-      a {
-        color: #0667D0;
-        text-decoration: none;
       }
 
       .content {
@@ -42,36 +30,30 @@
       }
 
       .currency {
-        /*@apply --paper-font-headline;*/
         @apply --paper-font-common-nowrap;
-        color: var(--paper-cryptocurrency-primary-text-color);
         font-weight: 300;
       }
 
+      paper-button:hover {
+        color: #06c9d0;
+      }
+
       paper-spinner-lite {
-        /*@apply --layout-fit;*/
         display: none;
         margin: auto;
         z-index: 2;
         height: 70px;
         width: 70px;
-        --paper-spinner-color: var(--paper-cryptocurrency-spinner-color, #06c9d0);
-        --paper-spinner-stroke-width: var(--paper-cryptocurrency-spinner-width, 5px);
-        @apply --paper-cryptocurrency-spinner;
+        --paper-spinner-color: #06c9d0;
+        --paper-spinner-stroke-width: 5px;
       }
 
       paper-spinner-lite[active] {
         display: block;
       }
-
-      .lineChart {
-        width: 100%
-      }
     </style>
 
     <iron-ajax id="coinbase" handle-as="json" on-response="_handleResponse" loading="{{loading}}"></iron-ajax>
-
-    <h2>Crypto Dash</h2>
 
     <paper-spinner-lite active="[[loading]]"></paper-spinner-lite>
 
